@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace RhythmsGonnaGetYou
 {
@@ -11,6 +12,7 @@ namespace RhythmsGonnaGetYou
         public int BandId { get; set; }
 
         public Band Band { get; set; }
+        public List<Song> Songs { get; set; }
 
     }
 }

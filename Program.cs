@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace RhythmsGonnaGetYou
 {
@@ -12,10 +14,17 @@ namespace RhythmsGonnaGetYou
             var bandCount = context.Bands.Count();
             Console.WriteLine($"There are {bandCount} bands in the database");
 
-            foreach (var band in context.Bands)
+            var albumList = context.Albums.Include(album => album.Band);
+
+            foreach (var album in albumList)
             {
-                Console.WriteLine($"There is a band named {band.Name} ");
+                Console.WriteLine($"There's an Album named {album.Title}");
+
             }
+
         }
     }
+
 }
+
+
