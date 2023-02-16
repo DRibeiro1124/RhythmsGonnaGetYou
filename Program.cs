@@ -10,21 +10,22 @@ namespace RhythmsGonnaGetYou
         static void Main(string[] args)
         {
             var context = new RhythmsContext();
+            DisplayGreeting();
 
-            var bandCount = context.Bands.Count();
-            Console.WriteLine($"There are {bandCount} bands in the database");
-
-            var albumList = context.Albums.Include(album => album.Band);
-
-            foreach (var album in albumList)
-            {
-                Console.WriteLine($"There's an Album named {album.Title}");
-
-            }
+            bool keepGoing = true;
 
         }
+
+        static void DisplayGreeting()
+        {
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+            Console.WriteLine("|                                        |");
+            Console.WriteLine("|  Welcome to Empire Records Music DB    |");
+            Console.WriteLine("|                                        |");
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
     }
-
 }
-
-
